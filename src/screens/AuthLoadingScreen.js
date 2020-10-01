@@ -12,7 +12,7 @@ firebase.initializeApp(FIREBASE_CONFIG);
 const AuthLoadingScreen = ({ navigation }) => {
   firebase.auth().onAuthStateChanged(user => {
     if (user) {
-      // User is logged in
+      this.setState({ isAuthorized: true });
       navigation.navigate("Dashboard");
     } else {
       // User is not logged in
